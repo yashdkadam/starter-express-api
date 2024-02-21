@@ -18,6 +18,7 @@
   "homepage": "https://github.com/cyclic-software/starter-express-api#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "linkedin-jobs-api": "^1.0.0"
+    "linkedin-jobs-api": "^1.0.0",
+    "snowfl-api": "^1.0.2"
   }
 }

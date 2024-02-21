@@ -5,11 +5,11 @@ const app = express();
 const snowfl = new Snowfl();
 
 // Define your route with query parameters
-app.get('/fetchData', async (req, res) => {
+app.get('/tor', async (req, res) => {
   const { query, nsfw } = req.query;
 
   try {
-    let data = await fetchData(query, includeNsfw);
+    let data = await fetchData(query, nsfw);
     res.json(data);
   } catch (error) {
     console.error(error);
@@ -18,11 +18,11 @@ app.get('/fetchData', async (req, res) => {
 });
 
 // Function to fetch data
-async function fetchData(query, includeNsfw) {
+async function fetchData(query, nsfw) {
   try {
     let options = {
       sort: Sort.MAX_SEED,
-      includeNsfw: includeNsfw === 'true' // Convert string to boolean
+      nsfw: nsfw === 'true' // Convert string to boolean
     };
     let res = await snowfl.parse(query || 'JoJo', options);
     return res;
